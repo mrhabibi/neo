@@ -18,10 +18,10 @@ object Matrix {
     var preferences = HashMap<String, NeoPreference>()
     var variables = HashMap<String, NeoVariable>()
 
-    lateinit var getSingleToggle: Function2<Function1<NeoToggle, Unit>, String, Unit>
-    lateinit var getSingleConfig: Function2<Function1<NeoConfig, Unit>, String, Unit>
-    lateinit var getSinglePreference: Function2<Function1<NeoPreference, Unit>, String, Unit>
-    lateinit var putSinglePreference: Function2<String, Any, Unit>
+    lateinit var getSingleToggle: ((NeoToggle) -> Unit, String) -> Unit
+    lateinit var getSingleConfig: ((NeoConfig) -> Unit, String) -> Unit
+    lateinit var getSinglePreference: ((NeoPreference) -> Unit, String) -> Unit
+    lateinit var putSinglePreference: (String, Any) -> Unit
 
     fun <T : NeoModel> blend(map: HashMap<String, T>,
                              item: T) {
@@ -44,7 +44,7 @@ object Matrix {
     fun <T : NeoModel> fetchData(holder: HashMap<String, T>,
                                  asset: List<T>,
                                  dao: NeoDao<T>,
-                                 getMultiple: Function1<Function1<List<T>, Unit>, Unit>) {
+                                 getMultiple: ((List<T>) -> Unit) -> Unit) {
         bg {
             blend(holder, asset)
             blend(holder, dao.get())
@@ -59,7 +59,7 @@ object Matrix {
     fun <T : NeoModel> fetchData(id: String,
                                  holder: HashMap<String, T>,
                                  dao: NeoDao<T>,
-                                 getSingle: Function2<Function1<T, Unit>, String, Unit>) {
+                                 getSingle: ((T) -> Unit, String) -> Unit) {
         bg {
             getSingle.invoke({ data ->
                 blend(holder, data)
@@ -73,8 +73,8 @@ object Matrix {
     }
 
     fun initToggle(assets: List<NeoToggle>, variables: List<NeoVariable>,
-                   getSingle: Function2<Function1<NeoToggle, Unit>, String, Unit>,
-                   getMultiple: Function1<Function1<List<NeoToggle>, Unit>, Unit>) {
+                   getSingle: ((NeoToggle) -> Unit, String) -> Unit,
+                   getMultiple: ((List<NeoToggle>) -> Unit) -> Unit) {
         getSingleToggle = getSingle
         fetchData(
                 holder = toggles,
@@ -86,8 +86,8 @@ object Matrix {
     }
 
     fun initConfig(assets: List<NeoConfig>,
-                   getSingle: Function2<Function1<NeoConfig, Unit>, String, Unit>,
-                   getMultiple: Function1<Function1<List<NeoConfig>, Unit>, Unit>) {
+                   getSingle: ((NeoConfig) -> Unit, String) -> Unit,
+                   getMultiple: ((List<NeoConfig>) -> Unit) -> Unit) {
         getSingleConfig = getSingle
         fetchData(
                 holder = configs,
@@ -98,9 +98,9 @@ object Matrix {
     }
 
     fun initPreference(assets: List<NeoPreference>,
-                       getSingle: Function2<Function1<NeoPreference, Unit>, String, Unit>,
-                       putSingle: Function2<String, Any, Unit>,
-                       getMultiple: Function1<Function1<List<NeoPreference>, Unit>, Unit>) {
+                       getSingle: ((NeoPreference) -> Unit, String) -> Unit,
+                       putSingle: (String, Any) -> Unit,
+                       getMultiple: ((List<NeoPreference>) -> Unit) -> Unit) {
         getSinglePreference = getSingle
         putSinglePreference = putSingle
         fetchData(

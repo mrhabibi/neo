@@ -2,6 +2,42 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'neo'
+
+    publishedGroupId = 'com.mrhabibi'
+    libraryName = 'Neo'
+    artifact = 'neo'
+
+    libraryDescription = 'A wrapper to manage feature toggle, feature config, and user preference using asset, local cache and server cache, and all synced for Android'
+
+    siteUrl = 'https://github.com/mrhabibi/neo'
+    gitUrl = 'https://github.com/mrhabibi/neo.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'mrhabibi'
+    developerName = 'Muhammad Rizky Habibi'
+    developerEmail = 'rizkyhabibi09@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
 android {
     compileSdkVersion 26
 
@@ -9,7 +45,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
-        versionName "0.1"
+        versionName "$libraryVersion"
 
     }
 
@@ -41,3 +77,6 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

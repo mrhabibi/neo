@@ -5,12 +5,10 @@ import com.google.gson.Gson
 /**
  * Created by mrhabibi on 11/4/17.
  */
-class GSON {
+object Utils {
 
-    companion object {
-        val instance: Gson by lazy {
-            Gson()
-        }
+    val gson: Gson by lazy {
+        Gson()
     }
 
 }

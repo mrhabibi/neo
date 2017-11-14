@@ -26,9 +26,15 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
+tasks.withType(Javadoc).all {
+    enabled = false
+}
+
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
+        google()
     }
 
     dependencies {
@@ -55,10 +61,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-
-repositories {
-    mavenCentral()
 }
 
 ext {

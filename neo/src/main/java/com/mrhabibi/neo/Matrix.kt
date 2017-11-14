@@ -1,9 +1,9 @@
-package com.bukalapak.android.neo
+package com.mrhabibi.neo
 
 import android.arch.persistence.room.Room
 import android.content.Context
-import com.bukalapak.android.neo.dao.NeoDao
-import com.bukalapak.android.neo.model.*
+import com.mrhabibi.neo.dao.NeoDao
+import com.mrhabibi.neo.model.*
 import org.jetbrains.anko.coroutines.experimental.bg
 
 /**

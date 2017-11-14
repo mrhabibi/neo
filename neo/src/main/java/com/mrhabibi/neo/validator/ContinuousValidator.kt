@@ -1,4 +1,4 @@
-package com.bukalapak.android.neo.validator
+package com.mrhabibi.neo.validator
 
 import java.util.regex.Matcher
 import java.util.regex.Pattern

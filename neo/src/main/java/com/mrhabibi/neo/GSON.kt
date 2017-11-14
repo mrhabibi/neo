@@ -1,4 +1,4 @@
-package com.bukalapak.android.neo
+package com.mrhabibi.neo
 
 import com.google.gson.Gson
 

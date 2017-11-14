@@ -1,4 +1,4 @@
-package com.bukalapak.android.neo.validator
+package com.mrhabibi.neo.validator
 
 import java.text.SimpleDateFormat
 import java.util.*

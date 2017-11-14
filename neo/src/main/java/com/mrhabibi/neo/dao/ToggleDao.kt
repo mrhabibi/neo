@@ -1,8 +1,8 @@
-package com.bukalapak.android.neo.dao
+package com.mrhabibi.neo.dao
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Query
-import com.bukalapak.android.neo.model.NeoToggle
+import com.mrhabibi.neo.model.NeoToggle
 
 /**
  * Created by mrhabibi on 10/26/17.

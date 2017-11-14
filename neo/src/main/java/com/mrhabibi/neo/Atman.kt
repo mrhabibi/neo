@@ -1,12 +1,12 @@
-package com.bukalapak.android.neo
+package com.mrhabibi.neo
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.TypeConverters
-import com.bukalapak.android.neo.dao.ConfigDao
-import com.bukalapak.android.neo.dao.PreferenceDao
-import com.bukalapak.android.neo.dao.ToggleDao
-import com.bukalapak.android.neo.model.*
+import com.mrhabibi.neo.dao.ConfigDao
+import com.mrhabibi.neo.dao.PreferenceDao
+import com.mrhabibi.neo.dao.ToggleDao
+import com.mrhabibi.neo.model.*
 
 /**
  * Created by mrhabibi on 10/26/17.

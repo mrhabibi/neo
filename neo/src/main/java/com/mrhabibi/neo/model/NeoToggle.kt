@@ -1,10 +1,10 @@
-package com.bukalapak.android.neo.model
+package com.mrhabibi.neo.model
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
-import com.bukalapak.android.neo.validator.NeoValidator
+import com.mrhabibi.neo.validator.NeoValidator
 
 /**
  * Created by mrhabibi on 10/26/17.

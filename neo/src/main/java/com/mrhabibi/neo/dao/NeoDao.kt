@@ -1,7 +1,7 @@
-package com.bukalapak.android.neo.dao
+package com.mrhabibi.neo.dao
 
 import android.arch.persistence.room.*
-import com.bukalapak.android.neo.model.NeoModel
+import com.mrhabibi.neo.model.NeoModel
 
 /**
  * Created by mrhabibi on 10/30/17.

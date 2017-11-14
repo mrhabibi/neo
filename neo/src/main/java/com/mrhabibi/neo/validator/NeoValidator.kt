@@ -1,4 +1,4 @@
-package com.bukalapak.android.neo.validator
+package com.mrhabibi.neo.validator
 
 /**
  * Created by mrhabibi on 5/9/17.

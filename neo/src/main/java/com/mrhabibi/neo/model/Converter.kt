@@ -1,4 +1,4 @@
-package com.bukalapak.android.neo.model
+package com.mrhabibi.neo.model
 
 import android.arch.persistence.room.TypeConverter
 import com.google.gson.Gson

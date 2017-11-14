@@ -1,6 +1,6 @@
-package com.bukalapak.android.neo.model
+package com.mrhabibi.neo.model
 
-import com.bukalapak.android.neo.validator.NeoValidator
+import com.mrhabibi.neo.validator.NeoValidator
 
 /**
  * Created by mrhabibi on 10/30/17.
